@@ -11,4 +11,8 @@ class Jogador:
         self.level = 1
         self.xp = 0
         self.nextlvlxp = self.level * 100
+        #pesca
+        self.pesca = 1
+        self.pescaXP = 0
+        self.pescaNXP = self.pesca * 100
         pass
