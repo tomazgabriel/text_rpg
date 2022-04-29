@@ -9,13 +9,6 @@ teste = 1
 
 while script_loop == True:
     while script_loop_game == True:
-        #morte
-        if jogador.hp < 0:
-            print("\n Você perdeu e seu XP foi reduzido")
-            jogador.xp = 0
-            jogador.hp = jogador.maxHp
-            c.limparConsole()
-
         c.statusJogador()
         comando = input("")
         #LVL
