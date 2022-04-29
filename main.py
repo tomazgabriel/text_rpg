@@ -34,6 +34,10 @@ while script_loop == True:
         #Lutar
         elif comando == "l" or comando == "L":
             c.lutar()
+        
+        #atividades
+        elif comando == "a" or comando == "A":
+            c.atividades()
 
 
     script_loop = False

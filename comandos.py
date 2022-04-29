@@ -20,7 +20,8 @@ limparConsole()
 nome = input("Digite seu nome: ")
 
 def statusJogador():
-    print(f"\nStatus:\nDia:{dia} Nome:{nome} Level:{jogador.level} XP:{jogador.xp} Prox.LVL:{jogador.nextlvlxp} Hp:{jogador.hp} Ataque:{jogador.ataque} Defesa:{jogador.defesa} Comida:{jogador.comida} Espaço:{jogador.inventario}\nSelecione um comando: \n D - Descansar, L - Lutar, P - Pescar, I - Inventário, S - Sair")
+    print(f"\nStatus:\nDia:{dia} Nome:{nome} Level:{jogador.level} XP:{jogador.xp} Prox.LVL:{jogador.nextlvlxp} Hp:{jogador.hp} Ataque:{jogador.ataque} Defesa:{jogador.defesa} Comida:{jogador.comida} Espaço:{jogador.inventario}")
+    print(f"\nSelecione um comando: \n D - Descansar, L - Lutar, A - Atividades, I - Inventário, S - Sair")
 
 
 def controleLevel():
@@ -52,6 +53,11 @@ def descansar():
 def inventario():
     print(f"\nEquipando:\n Arma:{jogador.arma}\nArmadura:{jogador.armadura}")
     limparConsole()
+
+def atividades():
+    x = input("\nSelecione quais atividades deseja:\nP - Pescar ")
+    if x == "p" or "P":
+        print(f"\nSeu nível de pesca é:{jogador.pesca}")
 
 
 def lutar():
