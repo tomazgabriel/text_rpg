@@ -14,6 +14,9 @@ def limparConsole():
     if comando_exit == "c":
         clear = lambda : os.system('cls')
         clear()
+def limparConsoleAuto():
+    clear = lambda : os.system('cls')
+    clear()        
 
 limparConsole()
 #nome
@@ -70,6 +73,9 @@ def lutar():
             limparConsole()
         #Quando perder
         if jogador.hp <= 0:
+            print("\n Você perdeu e seu XP foi reduzido")
+            jogador.xp = 0
+            jogador.hp = jogador.maxHp
             inimigo_vida = False
             limparConsole()
         #Fugir
@@ -87,8 +93,9 @@ def lutar():
                     dano_inimigo = 0
                 jogador.hp -= dano_inimigo
                 inimigo_hp -= dano
-                print(f"\n Você atacou e criou {dano} de dano!\n Você foi atacado e recebeu {dano_inimigo} de dano!")
-                limparConsole()
+                #print(f"\n Você atacou e criou {dano} de dano!\n Você foi atacado e recebeu {dano_inimigo} de dano!")
+                historico = f"\n Você atacou e criou {dano} de dano!\n Você foi atacado e recebeu {dano_inimigo} de dano!"
+                limparConsoleAuto()
 
             elif comando_luta == "d" or comando_luta == "B":
                 dano = (jogador.defesa - inimigo_att)
@@ -99,10 +106,11 @@ def lutar():
                     dano_inimigo = 0
                 jogador.hp -= dano_inimigo
                 inimigo_hp -= dano
-                print(f"\n Você atacou e criou {dano} de dano!\n Você foi atacado e recebeu {dano_inimigo} de dano!")
-                limparConsole()
+                #print(f"\n Você atacou e criou {dano} de dano!\n Você foi atacado e recebeu {dano_inimigo} de dano!")
+                historico = f"\n Você atacou e criou {dano} de dano!\n Você foi atacado e recebeu {dano_inimigo} de dano!"
+                limparConsoleAuto()
             #Status da batalha
-            print(f"\nStatus da batalha: HP:{jogador.hp}   HP Inimigo:{inimigo_hp}")
+            print(f"\nStatus da batalha: HP:{jogador.hp}   HP Inimigo:{inimigo_hp}\n{historico}")
 
 
 
